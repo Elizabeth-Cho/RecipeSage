@@ -1,4 +1,4 @@
-describe('download and install', () => {
+describe('contribute', () => {
   before(() => {
     cy.visit('https://recipesage.com/')
     cy.get('.title > .button-small').click();

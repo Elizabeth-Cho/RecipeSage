@@ -1,0 +1,20 @@
+describe('download and install', () => {
+  before(() => {
+    cy.visit('https://recipesage.com/')
+    cy.get('.title > .button-small').click();
+    cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
+    cy.get(':nth-child(11) > .ng-untouched').type('1234567')
+    cy.get('.ion-padding > .md').click();
+    cy.get('.buttons-first-slot > .md').click();
+    cy.get(':nth-child(13) > .item-has-start-slot > .sc-ion-label-md-h').click();
+  })
+
+  it('log out url, pop up log in page', () => {
+    cy.url().should('eq', 'https://recipesage.com/#/welcome')
+    cy.get('#ion-overlay-1 > .ion-page > .header-md > .toolbar-title-default > .title-default').should('have.text', 'Log In')
+    cy.get('.welcome > span').should('have.text', 'Please login with your account details below.')
+    cy.get('h2').should('have.text', 'Welcome back!')
+  })
+
+
+})
