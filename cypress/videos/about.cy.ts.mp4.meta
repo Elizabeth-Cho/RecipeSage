@@ -1,0 +1,41 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=151
+END=2167
+title=about titles displayed correctly
+[CHAPTER]
+TIMEBASE=1/1000
+START=2710
+END=4187
+title=about details displayed correctly
+[CHAPTER]
+TIMEBASE=1/1000
+START=4251
+END=5668
+title=contact correct url and title
+[CHAPTER]
+TIMEBASE=1/1000
+START=5726
+END=7088
+title=Legal, agreements and disclaimers correct url and title
+[CHAPTER]
+TIMEBASE=1/1000
+START=6985
+END=8453
+title=Legal, agreements and disclaimers return back to about
+[CHAPTER]
+TIMEBASE=1/1000
+START=8354
+END=9924
+title=social media Facebook
+[CHAPTER]
+TIMEBASE=1/1000
+START=10236
+END=11496
+title=social media Insta
+[CHAPTER]
+TIMEBASE=1/1000
+START=11499
+END=12758
+title=social media Discord

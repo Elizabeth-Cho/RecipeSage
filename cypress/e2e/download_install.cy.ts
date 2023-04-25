@@ -1,5 +1,5 @@
 describe('download and install', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('https://recipesage.com/')
     cy.get('.title > .button-small').click();
     cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
@@ -9,10 +9,10 @@ describe('download and install', () => {
     cy.get(':nth-child(9) > .item-has-start-slot > .sc-ion-label-md-h').click();
   })
 
-  it.only('title', () => {
+  it('download and install title', () => {
     cy.get('.ion-page > .header-md > .toolbar-title-default > .title-default').should('have.text', 'Download & Install')
-    cy.get('.ion-padding > :nth-child(1)').should('have.text', 'RecipeSage Application')
-    cy.get('.ion-padding > :nth-child(5)').should('have.text', 'Other RecipeSage Software')
+    cy.get('.ion-padding > :nth-child(1)').should('have.text', ' RecipeSage Application ')
+    cy.get('.ion-padding > :nth-child(5)').should('have.text', ' Other RecipeSage Software ')
   })
 
   it('Application', () => {

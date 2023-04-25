@@ -1,5 +1,5 @@
 describe('download and install', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('https://recipesage.com/')
     cy.get('.title > .button-small').click();
     cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
@@ -15,6 +15,21 @@ describe('download and install', () => {
     cy.get('.welcome > span').should('have.text', 'Please login with your account details below.')
     cy.get('h2').should('have.text', 'Welcome back!')
   })
+
+  it('log in again', () => {
+
+    cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
+    cy.get(':nth-child(11) > .ng-untouched').type('1234567')
+    cy.get('.ion-padding > .md').click();
+    cy.url().should('eq', 'https://recipesage.com/#/welcome')
+  })
+
+  // fault
+  it.only('when click, the pop-up window should disappear', () => {
+    cy.get('#ion-overlay-1').click();
+    cy.get('.welcome > span').should('not.exist')
+  })
+
 
 
 })

@@ -1,5 +1,5 @@
 describe('settings', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('https://recipesage.com/')
     cy.get('.title > .button-small').click();
     cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
@@ -104,11 +104,11 @@ describe('settings', () => {
   it('split view', () => {
     cy.get(':nth-child(7) > .ng-untouched').click({force: true});
     cy.get('#ion-tg-0-lbl').should('have.text', ' Enable Split Pane View on Large Screens ')
-    cy.get('.alert-button-inner').click({force: true});
+    cy.get(':nth-child(7) > .ng-untouched').click({force: true});
     cy.get('.split-pane-side > .header-md > .toolbar-title-default > .md').should('exist')
   })
 
-  it.only('background theme color', () => {
+  it('background theme color', () => {
     cy.get('.ion-page > .content-ltr').should("have.css", "background-color")
     .and("eq", "rgba(0, 0, 0, 0)")
     cy.get(':nth-child(8) > .ng-untouched').click({force: true});
@@ -117,6 +117,14 @@ describe('settings', () => {
     cy.get('.alert-button-group > :nth-child(2) > .alert-button-inner').click({force: true});
     cy.get('.item-has-start-slot.ion-touched > .ng-valid').should('have.text', ' System Default  Light  Dark  Black (OLED) ')
     
+  })
+
+  it('italian language setting working', () => {
+    cy.get(':nth-child(9) > .ng-untouched').click({force: true});
+    cy.get('#alert-input-1-2 > .alert-button-inner > .alert-radio-icon').click({force: true});
+    cy.get('#alert-input-1-2 > .alert-button-inner > .alert-radio-icon').click({force: true});
+    cy.get('.alert-button-group > :nth-child(2) > .alert-button-inner').click({force: true});
+    cy.get(':nth-child(2) > .sc-ion-label-md-h').should('have.text', ' Importa Dati Ricette ')
   })
   
 

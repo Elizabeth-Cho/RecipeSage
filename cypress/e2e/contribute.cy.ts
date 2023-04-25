@@ -1,5 +1,5 @@
 describe('contribute', () => {
-  before(() => {
+  beforeEach(() => {
     cy.visit('https://recipesage.com/')
     cy.get('.title > .button-small').click();
     cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
@@ -56,7 +56,7 @@ describe('contribute', () => {
     cy.get('i > a').should('have.attr', 'href').and('include', '#/legal')
   })
 
-  it.only('opening lines', () => {
+  it('opening lines displayed correctly', () => {
     cy.get('.card > :nth-child(2)').should('have.text', ' My goal is to keep RecipeSage open to anyone, without burdening the experience with ads. ')
     cy.get('.card > :nth-child(3)').should('have.text', ' However, as RecipeSage grows, hosting costs for servers and images begin to add up. ')
   })
