@@ -358,30 +358,30 @@ router.get(
   }));
 
 // Update a shopping list meta info (NOT INCLUDING ITEMS)
-// router.put(
-//   '/:shoppingListId',
-//   cors(),
-//   MiddlewareService.validateSession(['user']),
-//   function(req, res, next) {
+router.put(
+  '/:shoppingListId',
+  cors(),
+  MiddlewareService.validateSession(['user']),
+  function(req, res, next) {
 
-//   let updates = {};
+  let updates = {};
 
-//   if (typeof req.body.title === 'string') updates.title = req.body.title;
-//   if (req.body.collaborators) updates.collaborators = req.body.collaborators;
+  if (typeof req.body.title === 'string') updates.title = req.body.title;
+  if (req.body.collaborators) updates.collaborators = req.body.collaborators;
 
-//   ShoppingList.update(updates, {
-//     id: req.params.shoppingListId,
-//     userId: res.locals.session.userId
-//   }, function(shoppingList) {
-//     if (!shoppingList) {
-//       res.status(404).json({
-//         msg: "Shopping list with that ID does not exist or you do not have access!"
-//       });
-//     } else {
-//       res.status(200).json({});
-//     }
-//   }).catch(next);
-// });
+  ShoppingList.update(updates, {
+    id: req.params.shoppingListId,
+    userId: res.locals.session.userId
+  }, function(shoppingList) {
+    if (!shoppingList) {
+      res.status(404).json({
+        msg: "Shopping list with that ID does not exist or you do not have access!"
+      });
+    } else {
+      res.status(200).json({});
+    }
+  }).catch(next);
+});
 
 // Update items from a shopping list by a list of item ids
 router.put(

@@ -100,7 +100,7 @@ function getTitleForIngredient(ingredient) {
 }
 
 function isHeader(input) {
-  return line.match(headerRegexp);
+  return input.match(headerRegexp);
 }
 
 function stripIngredient(ingredient) {
@@ -259,6 +259,7 @@ function parseNotes(notes) {
 
 module.exports = {
   parseIngredients,
+  replaceFractionsInText,
   parseInstructions,
   parseNotes,
   stripIngredient,
@@ -266,5 +267,6 @@ module.exports = {
   getTitleForIngredient,
   unitUtils,
   isHandleValid,
+  isHeader,
   getShoppingListItemGroupings,
 }
