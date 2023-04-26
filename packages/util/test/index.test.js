@@ -10,7 +10,7 @@ const {
   getMeasurementsForIngredient,
   getTitleForIngredient,
   parseInstructions,
-} = require('./index');
+} = require('../src/index');
 
 describe('isHandleValid', () => {
  
