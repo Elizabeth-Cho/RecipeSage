@@ -37,48 +37,20 @@ const groupAndSort = (items, keyName, sortBy) => {
   }, {});
 }
 
-// items must be an array of objects with the properties groupTitle, categoryTitle, createdAt, and title
-// sortBy must be one of 'createdAt', '-createdAt', '-title'
-// Result will be items grouped by group/category/groupcategory
-module.exports = (items, sortBy) => {
-  const sortedItems = items.sort((a, b) => {
+const sortedItems  = (items, sortBy) => {
+  return items.sort((a, b) => {
     return itemSort(a, b, sortBy);
   });
+}
 
-  const groupTitles = Array.from(new Set(items.map(item => item.groupTitle))).sort((a, b) => {
-    // Sort groups by title (always)
-    return a.localeCompare(b);
-  });
-
-  const categoryTitles = Array.from(new Set(items.map(item => item.categoryTitle))).sort((a, b) => {
-    // Sort categories by title (always)
-    return a.localeCompare(b);
-  });
-
-  const itemsByGroupTitle = groupAndSort(items, 'groupTitle', sortBy);
-  const itemsByCategoryTitle = groupAndSort(items, 'categoryTitle', sortBy);
-
-  const groupsByCategoryTitle = items.reduce((acc, item) => {
-    acc[item.categoryTitle] = acc[item.categoryTitle] || [];
-    const arr = acc[item.categoryTitle];
-    let grouping = arr.find(el => el.title === item.groupTitle);
-    if (!grouping) {
-      grouping = {
-        title: item.groupTitle,
-        items: []
-      };
-      arr.push(grouping);
-    }
-    grouping.items.push(item);
-    return acc;
-  }, {});
-
-  return {
-    items: sortedItems,
-    groupTitles,
-    categoryTitles,
-    itemsByGroupTitle,
-    itemsByCategoryTitle,
-    groupsByCategoryTitle,
-  }
-};
+const itemsByGroupTitle  = (items, sortBy) => {
+  return groupAndSort(items, 'groupTitle', sortBy);
+}
+const itemsByCategoryTitle  = (items, sortBy) => {
+  return groupAndSort(items, 'categoryTitle', sortBy);
+}
+module.exports = {
+  sortedItems,
+  itemsByGroupTitle,
+  itemsByCategoryTitle
+}

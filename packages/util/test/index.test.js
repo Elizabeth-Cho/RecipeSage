@@ -8,8 +8,10 @@ const {
   isHeader,
   replaceFractionsInText,
   getMeasurementsForIngredient,
+  parseIngredients,
   getTitleForIngredient,
   parseInstructions,
+  stripIngredient,
 } = require('../src/index');
 
 describe('isHandleValid', () => {
@@ -793,6 +795,161 @@ describe('getTitleForIngredient', () => {
 
     it('empty header string returns empty array string', () => {
       expect(JSON.stringify(getTitleForIngredient("[]"))).equal(JSON.stringify("[]"))
+    });
+  });
+});
+
+describe('stripIngredient', () => {
+  describe('return recipe title', () => {
+
+    it('simple ingredient with measurement unit', () => {
+      expect(stripIngredient("3/4 cup chocolate")).equal("chocolate")
+    });
+
+    it('simple ingredient without measurement unit', () => {
+      expect(stripIngredient("3/4 butter")).equal("butter")
+    });
+
+    it('simple ingredient', () => {
+      expect(stripIngredient("steak")).equal("steak")
+    });
+
+    it('simple ingredient', () => {
+      expect(stripIngredient("steak")).equal("steak")
+    });
+
+    // fault
+    it('ingredients in sentence', () => {
+      expect(stripIngredient("Place the steak flat in the skillet ")).equal("Place the steak flat in the skillet")
+    });
+
+    it('simple ingredient with tablespoon', () => {
+      expect(stripIngredient("3/5 tablespoon flour")).equal("flour")
+    });
+
+    it('ingredients with white spaces', () => {
+      expect(stripIngredient("milk  ")).equal("milk")
+    });
+
+    it('multiple ingredient titles', () => {
+      expect(stripIngredient("milk, sugar, water")).equal("milk, sugar, water")
+    });
+  });
+
+  describe('edge cases', () => {
+
+    it('empty string returns empty string', () => {
+      expect(JSON.stringify(stripIngredient(""))).equal(JSON.stringify(""))
+    });
+
+    it('white spaces string returns empty string', () => {
+      expect(JSON.stringify(stripIngredient("   "))).equal(JSON.stringify(""))
+    });
+
+    it('empty header string returns empty array string', () => {
+      expect(JSON.stringify(stripIngredient("[]"))).equal(JSON.stringify("[]"))
+    });
+  });
+});
+
+describe('parseIngredients', () => {
+
+  describe('one line ingredients', () => {
+
+    it('ingredients with bodify parameter true', () => {
+      let res = [{
+        "content":"<b class=\"ingredientMeasurement\">2</b> teaspoons salt",
+        "originalContent":"2 teaspoons salt",
+        "complete":false,"isHeader":false
+      }]
+      expect(JSON.stringify(parseIngredients("2 teaspoons salt", 1, true))).equal(JSON.stringify(res))
+    });
+
+    it('ingredients with charcode fraction should be normalized', () => {
+      let res = [
+        {"content":"1/4 cup chopped fresh Italian parsley",
+        "originalContent":" 1/4 cup chopped fresh Italian parsley",
+        "complete":false,"isHeader":false}
+      ]
+      expect(JSON.stringify(parseIngredients("¼ cup chopped fresh Italian parsley", 1, false))).equal(JSON.stringify(res))
+    });
+
+    it('ingredients with scale parameter 0', () => {
+      let res = [
+        {"content":"0 teaspoon freshly ground black pepper",
+        "originalContent":"1 teaspoon freshly ground black pepper",
+        "complete":false,"isHeader":false}
+      ]
+      expect(JSON.stringify(parseIngredients("1 teaspoon freshly ground black pepper", 0, false))).equal(JSON.stringify(res))
+    });
+
+    it('header ingredients should return isHeader = true', () => {
+      let res = [{
+        "content":"ground black pepper",
+        "originalContent":"[ground black pepper]",
+        "complete":false,"isHeader":true
+      }]
+      expect(JSON.stringify(parseIngredients("[ground black pepper]", 0, false))).equal(JSON.stringify(res))
+    });
+
+    
+  });
+
+  describe('multiple lines ingredients', () => {
+
+    it('should return two ingredient object', () => {
+      let res = [
+        {"content":"<b class=\"ingredientMeasurement\">2</b> teaspoons salt","originalContent":"2 teaspoons salt ","complete":false,"isHeader":false},
+        {"content":"<b class=\"sectionHeader\">ground black pepper</b>","originalContent":" [ground black pepper]","complete":false,"isHeader":true
+      }]
+      expect(JSON.stringify(parseIngredients("2 teaspoons salt \n [ground black pepper]", 1, true))).equal(JSON.stringify(res))
+    });
+
+    it('ingredients with PartDelimiters', () => {
+      let res = [
+        {
+          "content":"8 cloves garlic + 4 teaspoons salt",
+          "originalContent":"4 cloves garlic + 2 teaspoons salt ",
+          "complete":false,
+          "isHeader":false
+        },
+        {
+          "content":"4|3 large green bell peppers",
+          "originalContent":" 2|3 large green bell peppers",
+          "complete":false,
+          "isHeader":false
+        }]
+      expect(JSON.stringify(parseIngredients("4 cloves garlic + 2 teaspoons salt \n 2|3 large green bell peppers", 2, false))).equal(JSON.stringify(res))
+    });
+
+    it('ingredients containing "to" or "-"', () => {
+      let res = [
+        {"content":"2 to 4 cloves garlic","originalContent":"2 to 4 cloves garlic ","complete":false,"isHeader":false},
+        {"content":"4 - 6 teaspoons salt","originalContent":" 4 - 6 teaspoons salt","complete":false,"isHeader":false}
+      ]
+      expect(JSON.stringify(parseIngredients("2 to 4 cloves garlic \n 4 - 6 teaspoons salt", 1, false))).equal(JSON.stringify(res))
+    });
+
+
+  });
+
+  describe('edge cases', () => {
+
+    it('empty string returns empty array', () => {
+      expect(JSON.stringify(parseIngredients("", 1, true))).equal(JSON.stringify([]))
+    });
+
+    it('white spaces string returns array with empty string object', () => {
+      let res = [
+        {"content":"   ","originalContent":"   ","complete":false,"isHeader":false
+        },
+      ]
+      expect(JSON.stringify(parseIngredients("   ", 2, false))).equal(JSON.stringify(res))
+    });
+
+    it('empty header string returns empty array', () => {
+      let res = [{"content":"","originalContent":"[]","complete":false,"isHeader":true}]
+      expect(JSON.stringify(parseIngredients("[]", 2, false))).equal(JSON.stringify(res))
     });
   });
 });
