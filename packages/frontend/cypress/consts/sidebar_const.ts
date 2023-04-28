@@ -1,0 +1,14 @@
+export const OPEN_SIDEBAR = '.buttons-first-slot > .md';
+export const MY_RECIPES = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(1) > ion-item';
+export const MANAGE_LABELS = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(2) > ion-item';
+export const PEOPLE_PROFILE = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(3) > ion-item';
+export const MESSAGES = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(4) > ion-item';
+export const RECIPE_INBOX = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(5) > ion-item';
+export const CREATE_RECIPE = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(6) > ion-item';
+export const SHOPPING_LISTS = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(7) > ion-item';
+export const MEAL_PLANS = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(8) > ion-item';
+export const DOWNLOAD_INSTALL = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(9) > ion-item';
+export const CONTRIBUTE  = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(10) > ion-item';
+export const SETTINGS = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(11) > ion-item';
+export const ABOUT_SUPPORT = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(12) > ion-item';
+export const LOGOUT = 'body > app-root > ion-app > ion-split-pane > ion-menu > ion-content > ion-list > ion-menu-toggle:nth-child(13) > ion-item';
