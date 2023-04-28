@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1682711730259" clover="3.2.0">
+  <project timestamp="1682711730260" name="All files">
+    <metrics statements="178" coveredstatements="173" conditionals="18" coveredconditionals="12" methods="47" coveredmethods="45" elements="243" coveredelements="230" complexity="0" loc="178" ncloc="178" packages="3" files="22" classes="22"/>
+    <package name="src">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="testutils.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/testutils.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="4" type="stmt"/>
+        <line num="5" count="80" type="stmt"/>
+        <line num="7" count="4" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.config">
+      <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <file name="sequelize-config.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/config/sequelize-config.js">
+        <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="2" methods="0" coveredmethods="0"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.models">
+      <metrics statements="171" coveredstatements="166" conditionals="14" coveredconditionals="10" methods="46" coveredmethods="44"/>
+      <file name="fcmtoken.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/fcmtoken.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+      </file>
+      <file name="image.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/image.js">
+        <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+      </file>
+      <file name="index.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/index.js">
+        <metrics statements="24" coveredstatements="21" conditionals="8" coveredconditionals="7" methods="5" coveredmethods="3"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="17" count="46" type="cond" truecount="4" falsecount="0"/>
+        <line num="20" count="38" type="stmt"/>
+        <line num="21" count="38" type="stmt"/>
+        <line num="22" count="38" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="40" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="38" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="33" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="44" count="2" type="stmt"/>
+      </file>
+      <file name="label.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/label.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="36" count="2" type="stmt"/>
+      </file>
+      <file name="mealPlan_collaborator.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/mealPlan_collaborator.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+      <file name="mealplan.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/mealplan.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+      </file>
+      <file name="mealplanitem.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/mealplanitem.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+      </file>
+      <file name="message.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/message.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+      </file>
+      <file name="profileitem.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/profileitem.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+      </file>
+      <file name="recipe.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/recipe.js">
+        <metrics statements="20" coveredstatements="20" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="4"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
+        <line num="88" count="2" type="stmt"/>
+        <line num="94" count="2" type="stmt"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="108" count="2" type="stmt"/>
+        <line num="112" count="2" type="stmt"/>
+        <line num="116" count="2" type="stmt"/>
+        <line num="120" count="2" type="stmt"/>
+        <line num="124" count="2" type="stmt"/>
+        <line num="132" count="2" type="stmt"/>
+        <line num="133" count="1" type="stmt"/>
+        <line num="134" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="135" count="1" type="stmt"/>
+        <line num="141" count="2" type="stmt"/>
+      </file>
+      <file name="recipe_image.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/recipe_image.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+      <file name="recipe_label.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/recipe_label.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+      <file name="session.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/session.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+      </file>
+      <file name="shoppingList_collaborator.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/shoppingList_collaborator.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+      </file>
+      <file name="shoppinglist.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/shoppinglist.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="37" count="2" type="stmt"/>
+      </file>
+      <file name="shoppinglistitem.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/shoppinglistitem.js">
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="51" count="2" type="stmt"/>
+      </file>
+      <file name="stripePayment.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/stripePayment.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+      </file>
+      <file name="user.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/user.js">
+        <metrics statements="26" coveredstatements="24" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="1" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="61" count="2" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="84" count="2" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="96" count="2" type="stmt"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="106" count="2" type="stmt"/>
+        <line num="113" count="2" type="stmt"/>
+        <line num="117" count="2" type="stmt"/>
+        <line num="122" count="2" type="stmt"/>
+        <line num="123" count="1" type="cond" truecount="2" falsecount="2"/>
+        <line num="126" count="1" type="stmt"/>
+        <line num="129" count="0" type="stmt"/>
+        <line num="137" count="0" type="stmt"/>
+        <line num="140" count="2" type="stmt"/>
+      </file>
+      <file name="userSubscription.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/userSubscription.js">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+      </file>
+      <file name="user_profile_image.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/backend/src/models/user_profile_image.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

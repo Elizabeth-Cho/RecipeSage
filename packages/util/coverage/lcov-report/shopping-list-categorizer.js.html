@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for units.js</title>
+    <title>Code coverage report for shopping-list-categorizer.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> units.js</h1>
+        <h1><a href="index.html">All files</a> shopping-list-categorizer.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/7</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -99,24 +99,9 @@
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4509x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,56 +116,62 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">3178x</span>
+<span class="cline-any cline-yes">4943x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3178x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Unitz = require('unitz-ts');
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const itemCategories = require('../../backend/src/constants/itemCategories.json');
 &nbsp;
-Unitz.Classes.addDefaults();
+const itemTitles = Object.keys(itemCategories).sort((a, b) =&gt; b.length - a.length);
 &nbsp;
-Unitz.Core.addClass(new Unitz.Class('Can', [{
-  system: Unitz.System.ANY,
-  common: true,
-  unit: 'can',
-  baseUnit: 'can',
-  denominators: [2, 3, 4, 5, 6, 7, 8, 9, 10],
-  units: {
-    'can': Unitz.Plurality.SINGULAR,
-    'cans': Unitz.Plurality.PLURAL,
-  }
-}]));
-&nbsp;
-Unitz.Core.addClass(new Unitz.Class('Package', [{
-  system: Unitz.System.ANY,
-  common: true,
-  unit: 'package',
-  baseUnit: 'package',
-  denominators: [2, 3, 4, 5, 6, 7, 8, 9, 10],
-  units: {
-    'package': Unitz.Plurality.SINGULAR,
-    'packages': Unitz.Plurality.PLURAL,
-  }
-}]));
-&nbsp;
-Unitz.Core.getGroup('tablespoon').addUnits({
-  'tbs': Unitz.Plurality.SINGULAR
-});
-&nbsp;
-const unitNames = [].concat.apply([], Object.keys(Unitz.Core.classMap).map(className =&gt; Object.keys(Unitz.Core.classMap[className].groupMap)));
-&nbsp;
-module.exports = {
-  Unitz,
-  unitNames,
+const formattedCategoryTitles = {
+  'produce': 'Produce',
+  'dairy': 'Dairy',
+  'meat': 'Meats',
+  'bakery': 'Baked Goods',
+  'grocery': 'Grocery Items',
+  'liquor': 'Liquor',
+  'seafood': 'Seafood',
+  'nonfood': 'Non-Food and Household',
+  'deli': 'Deli'
 };
 &nbsp;
-&nbsp;</pre></td></tr></table></pre>
+const getCategoryTitle = itemTitle =&gt; {
+  itemTitle = itemTitle.toLowerCase();
+  if (itemTitle.includes('canned') || itemTitle.includes(' can ') || itemTitle.includes(' cans ')) return 'Canned';
+  if (itemTitle.includes('frozen')) return 'Frozen';
+&nbsp;
+  const itemTitleMatch = itemTitles.find(potentialMatch =&gt; {
+    const potentialChunks = potentialMatch.charAt(0) === '*' ? [potentialMatch.substring(1)] : potentialMatch.split(' '); // Matchers beginning with * should be matched whole
+    const diffChunks = potentialChunks.filter(token =&gt; !itemTitle.includes(token)); // Filter by any chunks that _do not_ match our itemTitle
+&nbsp;
+    return diffChunks.length === 0;
+  });
+  if (!itemTitleMatch) return 'Uncategorized';
+&nbsp;
+  const category = itemCategories[itemTitleMatch];
+  return formattedCategoryTitles[category];
+};
+&nbsp;
+&nbsp;
+module.exports = {
+  getCategoryTitle,
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

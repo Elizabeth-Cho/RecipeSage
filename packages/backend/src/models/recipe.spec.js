@@ -52,6 +52,12 @@ describe('_findTitleCount', () => {
     expect(adjustedTitle).to.equal("userId (2)");
   });
 
+  it('returns original name when no conflict', async () => {
+    adjustedTitle = Recipe._findTitleCount("userId", 1);
+    expect(adjustedTitle).to.equal("userId");
+  });
+
+
   it('when count num is zero', async () => {
     adjustedTitle = Recipe._findTitleCount("Jessie", 0);
     expect(adjustedTitle).to.equal("Jessie (0)");
@@ -61,10 +67,8 @@ describe('_findTitleCount', () => {
 
 describe('share', () => {
   let findByPkStub;
-  let findTitleStub; 
   beforeAll(() => {
     findByPkStub = sinon.stub(Recipe, 'findByPk').returns(Promise.resolve());
-    findTitleStub = sinon.stub(Recipe, 'findTitle').returns(Promise.resolve());
   });
 
   it('calls and returns result of findByPkStub with proper args', () => {
@@ -77,5 +81,4 @@ describe('share', () => {
       expect(result).to.equal("test_result");
     });
   });
-
 });

@@ -129,13 +129,94 @@ module.exports = (sequelize, DataTypes) => {
     });
   };
 
+  Recipe._findTitleCount = function(basename, ctr) {
+    let adjustedTitle;
+    if (ctr == 1) {
+      adjustedTitle = basename;
+    } else {
+      adjustedTitle = basename + ' (' + ctr + ')';
+    }
+    return adjustedTitle;
+  };
+
+  Recipe._findTitle = function(userId, recipeId, basename, transaction, ctr) {
+    let adjustedTitle = _findTitleCount(basename, ctr)
+    return Recipe.findOne({
+      where: {
+        id: { [Op.ne]: recipeId },
+        userId: userId,
+        title: adjustedTitle
+      },
+      transaction
+    }).then(dupe => {
+      if (dupe) {
+        return Recipe._findTitle(userId, recipeId, basename, transaction, ctr + 1);
+      }
+
+      return adjustedTitle;
+    });
+  };
+
+  Recipe.findTitle = function(userId, recipeId, basename, transaction) {
+    return Recipe._findTitle(userId, recipeId, basename, transaction, 1);
+  };
+
   Recipe.share = function(recipeId, recipientId, transaction) {
     return Recipe.findByPk(recipeId, { transaction }).then(recipe => {
       if (recipeId == "test") {
         return "test_result"
       }
-      
+      if (!recipe) {
+        const e = new Error('Could not find recipe to share');
+        e.status = 404;
+        throw e;
+      } else {
+        return recipe.share(recipientId, transaction);
+      }
     });
+  };
+
+  Recipe.prototype.share = async function(recipientId, title, transaction) {
+    const adjustedTitle = await Recipe.findTitle(recipientId, null, title, transaction);
+
+    const recipe = await Recipe.create({
+      userId: recipientId,
+      title: adjustedTitle,
+      description: this.description,
+      yield: this.yield,
+      activeTime: this.activeTime,
+      totalTime: this.totalTime,
+      source: this.source,
+      url: this.url,
+      notes: this.notes,
+      ingredients: this.ingredients,
+      instructions: this.instructions,
+      folder: 'inbox',
+      fromUserId: this.userId
+    }, {
+      transaction
+    });
+
+    const Recipe_Image = require('./models').Recipe_Image;
+
+    const recipeImages = await Recipe_Image.findAll({
+      where: {
+        recipeId: this.id
+      },
+      transaction
+    });
+
+    if (recipeImages.length > 0) {
+      await Recipe_Image.bulkCreate(recipeImages.map(recipeImage => ({
+        recipeId: recipe.id,
+        imageId: recipeImage.imageId,
+        order: recipeImage.order
+      })), {
+        transaction
+      });
+    }
+
+    return recipe;
   };
 
   return Recipe;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682620766921" clover="3.2.0">
-  <project timestamp="1682620766921" name="All files">
-    <metrics statements="141" coveredstatements="139" conditionals="62" coveredconditionals="57" methods="36" coveredmethods="36" elements="239" coveredelements="232" complexity="0" loc="141" ncloc="141" packages="1" files="3" classes="3"/>
+<coverage generated="1682708937943" clover="3.2.0">
+  <project timestamp="1682708937943" name="All files">
+    <metrics statements="156" coveredstatements="154" conditionals="73" coveredconditionals="68" methods="40" coveredmethods="40" elements="269" coveredelements="262" complexity="0" loc="156" ncloc="156" packages="1" files="4" classes="4"/>
     <file name="get-shopping-list-item-groupings.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/util/src/get-shopping-list-item-groupings.js">
       <metrics statements="31" coveredstatements="31" conditionals="12" coveredconditionals="12" methods="9" coveredmethods="9"/>
       <line num="2" count="2" type="stmt"/>
@@ -46,9 +46,9 @@
       <line num="14" count="1" type="stmt"/>
       <line num="15" count="19" type="cond" truecount="2" falsecount="0"/>
       <line num="16" count="16" type="cond" truecount="2" falsecount="0"/>
-      <line num="18" count="6" type="stmt"/>
-      <line num="19" count="11" type="cond" truecount="2" falsecount="0"/>
-      <line num="22" count="4" type="stmt"/>
+      <line num="18" count="8" type="stmt"/>
+      <line num="19" count="15" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="6" type="stmt"/>
       <line num="25" count="1" type="stmt"/>
       <line num="46" count="18" type="stmt"/>
       <line num="48" count="1" type="stmt"/>
@@ -141,6 +141,24 @@
       <line num="247" count="11" type="stmt"/>
       <line num="252" count="18" type="stmt"/>
       <line num="260" count="1" type="stmt"/>
+    </file>
+    <file name="shopping-list-categorizer.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/util/src/shopping-list-categorizer.js">
+      <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="11" methods="4" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="4509" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="11" type="stmt"/>
+      <line num="19" count="11" type="cond" truecount="5" falsecount="0"/>
+      <line num="20" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="5" type="stmt"/>
+      <line num="23" count="3178" type="cond" truecount="2" falsecount="0"/>
+      <line num="24" count="4943" type="stmt"/>
+      <line num="26" count="3178" type="stmt"/>
+      <line num="28" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="2" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
     </file>
     <file name="units.js" path="/Users/luojiaxin/Desktop/RecipeSage/packages/util/src/units.js">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>

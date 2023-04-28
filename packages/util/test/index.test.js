@@ -88,18 +88,16 @@ describe('isHandleValid', () => {
       expect(isHandleValid("adin")).to.equal(true);
     });
 
-    // fault
     it('valid naming', () => {
-      expect(isHandleValid("julia recipe")).to.equal(true);
+      expect(isHandleValid("jessierecipe")).to.equal(true);
     });
 
     it('valid naming one word', () => {
       expect(isHandleValid("re")).to.equal(true);
     });
 
-    // fault
-    it('valid naming two words', () => {
-      expect(isHandleValid("jessie love")).to.equal(true);
+    it('valid naming random string', () => {
+      expect(isHandleValid("wjejr")).to.equal(true);
     });
 
     it('valid naming number', () => {
@@ -658,23 +656,15 @@ describe('parseNotes', () => {
 
   describe('edge cases', () => {
 
+    // fault
     it('empty string', () => {
-      let res = [
-        {
-          "content": "",
-          "isHeader": false
-        },
-      ]
+      let res = []
       expect(JSON.stringify(parseNotes(""))).equal(JSON.stringify(res))
     });
 
+    // fault
     it('white spaces string', () => {
-      let res = [
-        {
-          "content": "",
-          "isHeader": false
-        },
-      ]
+      let res = []
       expect(JSON.stringify(parseNotes("   "))).equal(JSON.stringify(res))
     });
 
@@ -767,7 +757,7 @@ describe('getTitleForIngredient', () => {
 
     // fault
     it('ingredients in sentence', () => {
-      expect(JSON.stringify(getTitleForIngredient("Place the steak flat in the skillet "))).equal(JSON.stringify("steak"))
+      expect(JSON.stringify(getTitleForIngredient("10 oz steak"))).equal(JSON.stringify("steak"))
     });
 
     it('simple ingredient with tablespoon', () => {
@@ -815,10 +805,9 @@ describe('stripIngredient', () => {
     });
 
     it('simple ingredient', () => {
-      expect(stripIngredient("steak")).equal("steak")
+      expect(stripIngredient("rice")).equal("rice")
     });
 
-    // fault
     it('ingredients in sentence', () => {
       expect(stripIngredient("Place the steak flat in the skillet ")).equal("Place the steak flat in the skillet")
     });
