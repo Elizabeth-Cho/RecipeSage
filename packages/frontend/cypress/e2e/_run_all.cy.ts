@@ -1,5 +1,5 @@
 import './landing_login.cy'
-// import './my_recipes.cy'
+import './my_recipes.cy'
 import './manage_labels.cy'
 import './people_and_profile.cy'
 import './messages.cy'

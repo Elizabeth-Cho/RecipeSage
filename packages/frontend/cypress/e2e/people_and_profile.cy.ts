@@ -149,6 +149,7 @@ describe('people and profile', () => {
         cy.get(people_profile.PROFILE_ITEM_RECIPE).click();
         cy.get(people_profile.PROFILE_ITEM_SEARCH).type('fruit smoothie');
         cy.wait(1000);
+        cy.get(people_profile.RECIPE_SMOOTHIE).contains('Frozen Fruit smoothie', {matchCase: false});
         cy.get(people_profile.RECIPE_SMOOTHIE).click();
         cy.get(people_profile.PROFILE_ITEM_PUBLIC).click();
         cy.get(people_profile.PROFILE_ITEM_FEATURED_TITLE).type('Fruit smoothie');
@@ -156,11 +157,12 @@ describe('people and profile', () => {
         cy.get(people_profile.EDIT_SAVE).click();
         cy.wait(1000);
         cy.get(people_profile.VIEW_PROFILE).click();
-        cy.get(people_profile.VIEW_PROFILE_PINNED_FIRST).contains('Frozen Fruit smoothie', {matchCase: false});
+        cy.get(people_profile.VIEW_PROFILE_PINNED_FIRST).contains('Fruit smoothie', {matchCase: false});
         cy.get(people_profile.VIEW_PROFILE_PINNED_FIRST).click();
         cy.url().should('contain', '/#/recipe/');
         cy.get(create.TITLE).contains("Fruit Smoothies");
         cy.visit('/#/people/my-profile');
+        cy.wait(1000);
         cy.get(people_profile.PROFILE_ITEM_REMOVE_FIRST).click();
         cy.get(people_profile.EDIT_SAVE).click();
     })
@@ -181,6 +183,7 @@ describe('people and profile', () => {
         cy.url().should('contain', 'labels=desserts');
         cy.get(people_profile.SHARED_LABEL_TITLE).contains("desserts");
         cy.visit('/#/people/my-profile');
+        cy.wait(1000);
         cy.get(people_profile.PROFILE_ITEM_REMOVE_FIRST).click();
         cy.get(people_profile.EDIT_SAVE).click();
     })
@@ -199,6 +202,7 @@ describe('people and profile', () => {
         cy.url().should('contain', '/#/list/main');
         cy.get(people_profile.SHARED_LABEL_TITLE).contains("Shared Recipes");
         cy.visit('/#/people/my-profile');
+        cy.wait(1000);
         cy.get(people_profile.PROFILE_ITEM_REMOVE_FIRST).click();
         cy.get(people_profile.EDIT_SAVE).click();
     })
@@ -251,6 +255,7 @@ describe('sending friend requests', () => {
         cy.get(people_profile.SEARCH_FRIENDS).click();
         cy.get(people_profile.SEARCH_FRIENDS_INPUT).type('echo30.dev');
         cy.wait(1000);
+        cy.get(people_profile.SEARCH_FIRST_RESULT).contains('Click to select');
         cy.get(people_profile.SEARCH_FIRST_RESULT).click();
         cy.get(people_profile.SEARCH_OPEN_PROFILE).click();
         cy.url().should('include', 'echo30.dev');
@@ -260,6 +265,7 @@ describe('sending friend requests', () => {
         cy.get(people_profile.SEARCH_FRIENDS).click();
         cy.get(people_profile.SEARCH_FRIENDS_INPUT).type('echo30');
         cy.wait(1000);
+        cy.get(people_profile.SEARCH_FIRST_RESULT).contains('Click to select');
         cy.get(people_profile.SEARCH_FIRST_RESULT).click();
         cy.get(people_profile.SEARCH_OPEN_PROFILE).click();
         cy.get(people_profile.FRIEND_PROFILE_REQUEST).click();
@@ -274,6 +280,7 @@ describe('sending friend requests', () => {
         cy.get(people_profile.SEARCH_FRIENDS).click();
         cy.get(people_profile.SEARCH_FRIENDS_INPUT).type('echo30');
         cy.wait(1000);
+        cy.get(people_profile.SEARCH_FIRST_RESULT).contains('Click to select');
         cy.get(people_profile.SEARCH_FIRST_RESULT).click();
         cy.get(people_profile.SEARCH_SEND_REQUEST).click();
         cy.get('ion-toast').should('exist').shadow().contains('Friend invite sent!');
@@ -287,6 +294,7 @@ describe('sending friend requests', () => {
         cy.get(people_profile.SEARCH_FRIENDS).click();
         cy.get(people_profile.SEARCH_FRIENDS_INPUT).type('echo30.dev');
         cy.wait(1000);
+        cy.get(people_profile.SEARCH_FIRST_RESULT).contains('Click to select');
         cy.get(people_profile.SEARCH_FIRST_RESULT).click();
         cy.get(people_profile.SEARCH_SEND_REQUEST).click();
         cy.get(sidebar.OPEN_SIDEBAR).click();
@@ -307,6 +315,7 @@ describe('sending friend requests', () => {
         cy.get(people_profile.SEARCH_FRIENDS).click();
         cy.get(people_profile.SEARCH_FRIENDS_INPUT).type('echo30.dev');
         cy.wait(1000);
+        cy.get(people_profile.SEARCH_FIRST_RESULT).contains('Click to select');
         cy.get(people_profile.SEARCH_FIRST_RESULT).click();
         cy.get(people_profile.SEARCH_SEND_REQUEST).click();
         cy.get(sidebar.OPEN_SIDEBAR).click();
@@ -327,6 +336,7 @@ describe('sending friend requests', () => {
         cy.get(people_profile.SEARCH_FRIENDS).click();
         cy.get(people_profile.SEARCH_FRIENDS_INPUT).type('echo30.dev');
         cy.wait(1000);
+        cy.get(people_profile.SEARCH_FIRST_RESULT).contains('Click to select');
         cy.get(people_profile.SEARCH_FIRST_RESULT).click();
         cy.get(people_profile.SEARCH_SEND_REQUEST).click();
         cy.get(sidebar.OPEN_SIDEBAR).click();

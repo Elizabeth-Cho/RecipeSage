@@ -176,6 +176,7 @@ describe('shopping lists - creating and editing', () => {
         cy.get(shopping_list.DELETE_ALL_CONFIRM).click();
         cy.get(shopping_list.ADDED_STRAWBERRIES_MULTIPLE).should('not.exist');  
         cy.get(shopping_list.ADDED_BLUEBERRIES_MULTIPLE).should('not.exist');
+        cy.wait(1000);
     })
 
     // group similar items (1 cup sugar, 1 tbsp sugar)

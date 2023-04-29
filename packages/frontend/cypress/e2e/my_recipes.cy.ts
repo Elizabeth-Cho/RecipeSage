@@ -339,7 +339,8 @@ describe('my recipes - single recipe + meal plan', () => {
     afterEach(() => {
         // delete the meal plan
         cy.visit('/#/meal-planners');
-        cy.get(recipes.FIRST_MEAL_PLAN_IN_LIST).click();
+        cy.wait(1000);
+        cy.get(recipes.FIRST_MEAL_PLAN_IN_LIST).click({force: true});
         cy.wait(500);
         cy.get(meal_plans.OPTIONS).click();
         cy.get(meal_plans.DELETE_MEAL_PLAN).click();
@@ -348,6 +349,7 @@ describe('my recipes - single recipe + meal plan', () => {
 
     after(() => {
         cy.visit('/#/list/main');
+        cy.get(recipes.GARLIC_BREAD_SINGLE_CARD).click({force: true});
         cy.get(create.DELETE_RECIPE).click({force: true});
         cy.wait(500);
         cy.get(create.DELETE_CONFIRM).click({force: true});
@@ -444,6 +446,7 @@ describe('my recipes - creating copies', () => {
         cy.get(landing_login.LOGIN_EMAIL_INPUT).type('jluo30@jhu.edu')
         cy.get(landing_login.LOGIN_PASSWORD_INPUT).type('1234567')
         cy.get(landing_login.LOGIN_SUBMIT).click();
+        cy.wait(1000);
         // give it time to load the recipes?
         // cy.wait(3000);
         // cy.visit('/#/messages');
@@ -452,25 +455,10 @@ describe('my recipes - creating copies', () => {
         // logging in immediately leads to my recipes 
     })
 
-    // after(() => {
-    //     cy.visit('/#/list/main');
-    //     cy.get(create.DELETE_RECIPE).click({force: true});
-    //     cy.wait(500);
-    //     cy.get(create.DELETE_CONFIRM).click({force: true});
-    // })
-
-    afterEach(() => {
+    after(() => {
         cy.visit('/#/list/main');
-        cy.wait(500);
-        cy.get(recipes.EXTRA_BREAD).click();
-        cy.wait(500);
-        cy.get(create.DELETE_RECIPE).click({force: true});
-        cy.wait(500);
-        cy.get(create.DELETE_CONFIRM).click({force: true});
-        cy.visit('/#/list/main');
-        cy.wait(500);
-        cy.get(recipes.GARLIC_BREAD_SINGLE_CARD).click();
-        cy.wait(500);
+        cy.wait(1000);
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div').click({force: true});
         cy.get(create.DELETE_RECIPE).click({force: true});
         cy.wait(500);
         cy.get(create.DELETE_CONFIRM).click({force: true});
@@ -483,6 +471,10 @@ describe('my recipes - creating copies', () => {
         cy.get(create.TITLE).contains('(2)');
         cy.visit('/#/list/main');
         cy.get(recipes.EXTRA_BREAD, {timeout: 5000}).should('exist');
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)').click({force: true});
+        cy.get(create.DELETE_RECIPE).click({force: true});
+        cy.wait(500);
+        cy.get(create.DELETE_CONFIRM).click({force: true});
         // cy.get(create.RECIPE_CARD_BACK).click();
         // cy.get(create.RECIPE_CARD_BACK).click();
     })
@@ -493,6 +485,11 @@ describe('my recipes - creating copies', () => {
         cy.get(recipes.COPY_RECIPE).click();
         cy.wait(1000);
         cy.get(create.TITLE).contains('(2)');
+        cy.visit('/#/list/main');
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)').click({force: true});
+        cy.get(create.DELETE_RECIPE).click({force: true});
+        cy.wait(500);
+        cy.get(create.DELETE_CONFIRM).click({force: true});
     })
 
     // making a copy of a copy should increment the count --> fails, updated
@@ -507,17 +504,12 @@ describe('my recipes - creating copies', () => {
         cy.get(create.DELETE_RECIPE).eq(2).click({force: true});
         cy.wait(500);
         cy.get(create.DELETE_CONFIRM).click({force: true});
+        cy.wait(500);
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)').click({force: true});
+        cy.get(create.DELETE_RECIPE).click({force: true});
+        cy.wait(500);
+        cy.get(create.DELETE_CONFIRM).click({force: true});
     })
-
-    // // make a copy - hit back to get back to recipe page --> fails, updated
-    // it.only('should bring me back to the recipe page when I click back', () => {
-    //     cy.get(recipes.GARLIC_BREAD_SINGLE_CARD).click();
-    //     cy.get(recipes.COPY_RECIPE).click();
-    //     cy.get(create.TITLE).contains('(2)');
-    //     cy.get(recipes.COPY_RECIPE).click();
-    //     cy.get(create.RECIPE_CARD_BACK).click();
-    //     cy.url().contains('/list/main');
-    // })
 })
 
 describe('my recipes - multiple recipes', () => {
@@ -575,13 +567,17 @@ describe('my recipes - multiple recipes', () => {
     after(() => {
         cy.visit('/#/list/main');
         cy.wait(500);
-        cy.get(recipes.FIRST_RECIPE).click();
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(1)').click({force: true});
+        // cy.get(recipes.FIRST_RECIPE).click();
         cy.wait(500);
         cy.get(create.DELETE_RECIPE).click({force: true});
         cy.wait(500);
         cy.get(create.DELETE_CONFIRM).click({force: true});
+        cy.wait(500);
         cy.visit('/#/list/main');
-        cy.get(recipes.GARLIC_BREAD_SINGLE_CARD).click();
+        cy.wait(1000);
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div').click({force: true});
+        // cy.get(recipes.GARLIC_BREAD_SINGLE_CARD).click();
         cy.wait(500);
         cy.get(create.DELETE_RECIPE).click({force: true});
         cy.wait(500);
@@ -599,22 +595,28 @@ describe('my recipes - multiple recipes', () => {
 
     // pinning another recipe open should also have the other recipe pinned open
     it('should be able to pin multiple recipes', () => {
-        cy.get(recipes.FIRST_RECIPE).click({force:true});
+        // cy.get(recipes.FIRST_RECIPE).click({force:true});
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(1)').click({force: true});
         cy.get(recipes.PIN_RECIPE).click();
         cy.get(recipes.PIN_CONFIRM).click();
         cy.visit('/#/list/main');
-        cy.get(recipes.SECOND_RECIPE).click();
+        cy.wait(1000);
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)').click({force: true});
+        // cy.get(recipes.SECOND_RECIPE).click();
         cy.get(recipes.PIN_RECIPE).click();
         cy.get(recipes.COOKIES_PIN).should('be.visible');
     })
 
     // switching between pinned recipes
     it('should be able to click between pinned recipes', () => {
-        cy.get(recipes.FIRST_RECIPE).click({force:true});
+        // cy.get(recipes.FIRST_RECIPE).click({force:true});
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(1)').click({force: true});
         cy.get(recipes.PIN_RECIPE).click();
         cy.get(recipes.PIN_CONFIRM).click();
         cy.visit('/#/list/main');
-        cy.get(recipes.SECOND_RECIPE).click();
+        cy.wait(1000);
+        // cy.get(recipes.SECOND_RECIPE).click();
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)').click({force: true});
         cy.get(recipes.PIN_RECIPE).click();
         cy.get(recipes.BREAD_PIN).click();
         // cy.get(create.TITLE).contains('garlic bread', {matchCase: false});
@@ -624,11 +626,14 @@ describe('my recipes - multiple recipes', () => {
 
     // unpin a recipe
     it('should unpin a recipe when I click unpin recipe', () => {
-        cy.get(recipes.FIRST_RECIPE).click({force:true});
+        // cy.get(recipes.FIRST_RECIPE).click({force:true});
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(1)').click({force: true});
         cy.get(recipes.PIN_RECIPE).click();
         cy.get(recipes.PIN_CONFIRM).click();
         cy.visit('/#/list/main');
-        cy.get(recipes.SECOND_RECIPE).click();
+        cy.wait(1000);
+        // cy.get(recipes.SECOND_RECIPE).click();
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)').click({force: true});
         cy.get(recipes.PIN_RECIPE).click();
         cy.get(recipes.PIN_RECIPE).eq(0).click({force: true});
         cy.get(recipes.COOKIES_PIN).should('not.exist');
@@ -636,11 +641,14 @@ describe('my recipes - multiple recipes', () => {
 
     // closing the pin toolbar
     it('should not have any pins when the toolbar is closed', () => {
-        cy.get(recipes.FIRST_RECIPE).click({force:true});
+        // cy.get(recipes.FIRST_RECIPE).click({force:true});
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(1)').click({force: true});
         cy.get(recipes.PIN_RECIPE).click();
         cy.get(recipes.PIN_CONFIRM).click();
         cy.visit('/#/list/main');
-        cy.get(recipes.SECOND_RECIPE).click();
+        cy.wait(1000);
+        // cy.get(recipes.SECOND_RECIPE).click();
+        cy.get('#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)').click({force: true});
         cy.get(recipes.PIN_RECIPE).click();
         cy.get(recipes.CLOSE_PIN_TOOLBAR).click();
         cy.get(recipes.CLEAR_PIN_TOOLBAR_CONRFIRM).click();

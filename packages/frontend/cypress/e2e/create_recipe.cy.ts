@@ -35,13 +35,14 @@ describe('create recipe - form validation', () => {
         cy.get(create_recipe.DESCRIPTION_INPUT).type('test');
         cy.get(create_recipe.SUBMIT).click();
         cy.get('ion-toast').should('exist').shadow().contains('Please provide a recipe title (the only required field).');
-        cy.wait(5000);
+        // cy.wait(5000);
     }) 
 
     // autofill nothing when there's no link --> error toast
     it('should not fill out the form when no autofill link is provided', () => {
         // cy.visit('https://recipesage.com/#/edit-recipe/new');
         cy.get(create_recipe.AUTOFILL_FROM_LINK).click();
+        cy.wait(1000);
         cy.get(create_recipe.AUTOFILL_SUBMIT).click();
         cy.get('ion-toast').should('exist');
         // cy.wait(5000);
@@ -50,6 +51,7 @@ describe('create recipe - form validation', () => {
     // autofill with invalid link --> error toast
     it('should not fill out the form when an improper link is provided', () => {
         cy.get(create_recipe.AUTOFILL_FROM_LINK).click();
+        cy.wait(1000);
         cy.get(create_recipe.AUTOFILL_URL).type('not a valid url');
         cy.get(create_recipe.AUTOFILL_SUBMIT).click();
         cy.get('ion-toast').should('exist').shadow();
@@ -103,6 +105,7 @@ describe('create recipe - form validation', () => {
     it('should not be able to add an image when invalid text is input', () => {
         cy.get(create_recipe.ACTIONS_BUTTON).click();
         cy.get(create_recipe.ADD_IMG_BY_URL).click();
+        cy.wait(500);
         cy.get(create_recipe.IMG_URL_INPUT).type('adsf');
         cy.get(create_recipe.IMG_URL_CONFIRM).click();
         // An unexpected error occurred
@@ -237,9 +240,11 @@ describe('create recipe', () => {
         // title
         cy.get(create_recipe.TITLE_INPUT).type('test default image');
         cy.get(create_recipe.SUBMIT).click();
+        cy.wait(1000);
         cy.get(create_recipe.RECIPE_CARD_BACK).click();
+        cy.wait(1000);
         cy.get(create_recipe.FIRST_RECIPE_IMG).should('have.attr', 'src', '/assets/imgs/logo_green.png');
-        cy.get(create_recipe.SINGLE_RECIPE_CARD).click();
+        cy.get(create_recipe.SINGLE_RECIPE_CARD).click({force: true});
     })
 
     // uploading an image should result in not the default image
@@ -252,7 +257,8 @@ describe('create recipe', () => {
         cy.wait(1000);
         cy.get(create_recipe.SUBMIT).click();
         cy.get(create_recipe.RECIPE_CARD_BACK).click();
+        cy.wait(1000);
         cy.get(create_recipe.FIRST_RECIPE_IMG).should('not.have.attr', 'src', '/assets/imgs/logo_green.png');
-        cy.get(create_recipe.SINGLE_RECIPE_CARD).click();
+        cy.get(create_recipe.SINGLE_RECIPE_CARD).click({force: true});
     })
 }) 
