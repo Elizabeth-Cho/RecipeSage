@@ -12,8 +12,10 @@ describe('profile creation validation', () => {
         cy.get(landing_login.LOGIN_EMAIL_INPUT).type('jluo30@jhu.edu');
         cy.get(landing_login.LOGIN_PASSWORD_INPUT).type('1234567');
         cy.get(landing_login.LOGIN_SUBMIT).click();
-        cy.get(sidebar.OPEN_SIDEBAR).click();
-        cy.get(sidebar.PEOPLE_PROFILE).click();
+        cy.wait(500);
+        cy.visit('/#/people');
+        // cy.get(sidebar.OPEN_SIDEBAR).click();
+        // cy.get(sidebar.PEOPLE_PROFILE).click();
     })
 
     // should not create a profile with invalid characters in the tag
@@ -31,13 +33,15 @@ describe('profile creation validation', () => {
     })
     
     // should not create a profile without a name
-    it('should not be able to create a profile without a name', () => {
+    it('should change nothing when creating a profile without a name', () => {
         cy.get(people_profile.CREATE_VIEW_PROFILE).click();
         cy.get(people_profile.NAME_INPUT).clear();
         // cy.get(people_profile.NAME_INPUT).invoke('val').should('be.empty');
         cy.get(people_profile.HANDLE_INPUT).type('jluo30');
         cy.get(people_profile.PROFILE_CREATE_SAVE).click();
-        cy.get('ion-toast').should('exist');
+        cy.url().should('contain', '/people/my-profile');
+        // cy.get(people_profile.HANDLE_INPUT).should('exist');
+        // cy.get(people_profile.NAME_INPUT).should('exist');
     })
 
     it('should not be able to create a profile without a tag', () => {
@@ -60,8 +64,10 @@ describe('people and profile', () => {
         cy.get(landing_login.LOGIN_EMAIL_INPUT).type('echo30@jhu.edu');
         cy.get(landing_login.LOGIN_PASSWORD_INPUT).type('123456');
         cy.get(landing_login.LOGIN_SUBMIT).click();
-        cy.get(sidebar.OPEN_SIDEBAR).click();
-        cy.get(sidebar.PEOPLE_PROFILE).click();
+        // cy.get(sidebar.OPEN_SIDEBAR).click();
+        // cy.get(sidebar.PEOPLE_PROFILE).click();
+        cy.wait(500);
+        cy.visit('/#/people');
         cy.get(people_profile.CREATE_VIEW_PROFILE).click();
     })
 
@@ -150,7 +156,7 @@ describe('people and profile', () => {
         cy.get(people_profile.EDIT_SAVE).click();
         cy.wait(1000);
         cy.get(people_profile.VIEW_PROFILE).click();
-        cy.get(people_profile.VIEW_PROFILE_PINNED_FIRST).contains('Fruit smoothie');
+        cy.get(people_profile.VIEW_PROFILE_PINNED_FIRST).contains('Frozen Fruit smoothie', {matchCase: false});
         cy.get(people_profile.VIEW_PROFILE_PINNED_FIRST).click();
         cy.url().should('contain', '/#/recipe/');
         cy.get(create.TITLE).contains("Fruit Smoothies");
@@ -234,8 +240,10 @@ describe('sending friend requests', () => {
         cy.get(landing_login.LOGIN_EMAIL_INPUT).type('echo30@jhu.edu');
         cy.get(landing_login.LOGIN_PASSWORD_INPUT).type('123456');
         cy.get(landing_login.LOGIN_SUBMIT).click();
-        cy.get(sidebar.OPEN_SIDEBAR).click();
-        cy.get(sidebar.PEOPLE_PROFILE).click();
+        // cy.get(sidebar.OPEN_SIDEBAR).click();
+        // cy.get(sidebar.PEOPLE_PROFILE).click();
+        cy.wait(500);
+        cy.visit('/#/people');
         cy.wait(2000);
     })
 

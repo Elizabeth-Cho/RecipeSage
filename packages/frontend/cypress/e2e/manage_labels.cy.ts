@@ -34,8 +34,10 @@ describe('manage labels', () => {
         cy.get(':nth-child(8) > .ng-untouched').type('echo30@jhu.edu');
         cy.get(':nth-child(11) > .ng-untouched').type('123456');
         cy.get('.ion-padding > .md').click();
-        cy.get('.buttons-first-slot > .md').click();
-        cy.get(sidebar.MANAGE_LABELS).click();
+        // cy.get('.buttons-first-slot > .md').click();
+        // cy.get(sidebar.MANAGE_LABELS).click();
+        cy.wait(1000);
+        cy.visit('/#/labels');
     })
 
     // click on a label --> view all recipes

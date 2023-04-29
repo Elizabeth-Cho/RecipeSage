@@ -9,8 +9,10 @@ describe('shopping lists - empty form verification', () => {
         cy.get(':nth-child(8) > .ng-untouched').type('echo30@jhu.edu');
         cy.get(':nth-child(11) > .ng-untouched').type('123456');
         cy.get('.ion-padding > .md').click();
-        cy.get(sidebar.OPEN_SIDEBAR).click();
-        cy.get(sidebar.SHOPPING_LISTS).click();
+        cy.wait(1000);
+        cy.visit('/#/shopping-lists/');
+        // cy.get(sidebar.OPEN_SIDEBAR).click();
+        // cy.get(sidebar.SHOPPING_LISTS).click();
     })
 
     // should not be able to create a new shopping list without a name
@@ -71,8 +73,10 @@ describe('shopping lists - creating and editing', () => {
         cy.get(':nth-child(8) > .ng-untouched').type('echo30@jhu.edu');
         cy.get(':nth-child(11) > .ng-untouched').type('123456');
         cy.get('.ion-padding > .md').click();
-        cy.get(sidebar.OPEN_SIDEBAR).click();
-        cy.get(sidebar.SHOPPING_LISTS).click();
+        // cy.get(sidebar.OPEN_SIDEBAR).click();
+        // cy.get(sidebar.SHOPPING_LISTS).click();
+        cy.wait(1000);
+        cy.visit('/#/shopping-lists/');
         // new list
         cy.get(shopping_list.NEW_SHOPPING_LIST).click();
         cy.get(shopping_list.NEW_LIST_TITLE_INPUT).type('test shopping list');
@@ -223,8 +227,10 @@ describe('shopping list - nondestructive options', () => {
         cy.get(':nth-child(8) > .ng-untouched').type('echo30.dev@gmail.com');
         cy.get(':nth-child(11) > .ng-untouched').type('password');
         cy.get('.ion-padding > .md').click();
-        cy.get(sidebar.OPEN_SIDEBAR).click();
-        cy.get(sidebar.SHOPPING_LISTS).click();
+        // cy.get(sidebar.OPEN_SIDEBAR).click();
+        // cy.get(sidebar.SHOPPING_LISTS).click();
+        cy.wait(1000);
+        cy.visit('/#/shopping-lists/');
         cy.get(shopping_list.FIRST_IN_LIST, {timeout: 10000}).click();
     })
 

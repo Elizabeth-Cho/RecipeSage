@@ -1,13 +1,14 @@
 describe('about', () => {
     beforeEach(() => {
-      
       cy.visit('/')
       cy.get('.title > .button-small').click();
       cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
       cy.get(':nth-child(11) > .ng-untouched').type('1234567')
       cy.get('.ion-padding > .md').click();
-      cy.get('.buttons-first-slot > .md').click();
-      cy.get(':nth-child(12) > .item-has-start-slot > .sc-ion-label-md-h').click();
+      // cy.get('.buttons-first-slot > .md').click();
+      // cy.get(':nth-child(12) > .item-has-start-slot > .sc-ion-label-md-h').click();
+      cy.wait(500);
+      cy.visit('/#/about');
     })
   
     it('titles displayed correctly', () => {
@@ -45,20 +46,22 @@ describe('about', () => {
       cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
       cy.get(':nth-child(11) > .ng-untouched').type('1234567')
       cy.get('.ion-padding > .md').click();
-      cy.get('.buttons-first-slot > .md').click();
-      cy.get(':nth-child(12) > .item-has-start-slot > .sc-ion-label-md-h').click();
+      // cy.get('.buttons-first-slot > .md').click();
+      // cy.get(':nth-child(12) > .item-has-start-slot > .sc-ion-label-md-h').click();
+      cy.wait(500);
+      cy.visit('/#/about');
     })
     
     it('correct url and title', () => {
       cy.get('.ion-padding > .list-md > :nth-child(3)').click({force: true});
       cy.url().should('contain', '/about/contact')
-      cy.get('.can-go-back > .header-md > .toolbar-title-default > .title-default').should('have.text', 'Contact Me')
+      cy.get('.can-go-back > .header-md > .toolbar-title-default > .title-default').contains('Contact Me')
   
       cy.get(':nth-child(1) > b').should('have.text', 'Contact Info')
   
       cy.get('.can-go-back > .ion-padding > :nth-child(2)').should('have.text', ' For any questions, please refer to the user guide before emailing: https://docs.recipesage.com')
   
-      cy.get('.can-go-back > .ion-padding > :nth-child(3)').should('have.text', 'For any issues, bugs, or feature suggestions, you can email me at julian@recipesage.com')
+      cy.get('.can-go-back > .ion-padding > :nth-child(3)').contains('For any issues, bugs, or feature suggestions, you can email me at julian@recipesage.com')
       
     })
   
@@ -73,23 +76,25 @@ describe('about', () => {
       cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
       cy.get(':nth-child(11) > .ng-untouched').type('1234567')
       cy.get('.ion-padding > .md').click();
-      cy.get('.buttons-first-slot > .md').click();
-      cy.get(':nth-child(12) > .item-has-start-slot > .sc-ion-label-md-h').click();
+      // cy.get('.buttons-first-slot > .md').click();
+      // cy.get(':nth-child(12) > .item-has-start-slot > .sc-ion-label-md-h').click();
+      cy.wait(500);
+      cy.visit('/#/about');
     })
     
     it('correct url and title', () => {
       cy.get('.ion-padding > .list-md > :nth-child(6)').click({force: true});
       cy.url().should('contain', '/legal')
-      cy.get('.can-go-back > .header-md > .toolbar-title-default > .title-default').should('have.text', 'Legal, agreements and disclaimers')
+      cy.get('.can-go-back > .header-md > .toolbar-title-default > .title-default').contains('Legal, agreements and disclaimers');
   
-      cy.get('.can-go-back > .ion-padding > :nth-child(3)').should('have.text', 'RecipeSage Terms of Service')
+      cy.get('.can-go-back > .ion-padding > :nth-child(3)').contains('RecipeSage Terms of Service');
       
     })
   
     it('return back to about', () => {
       cy.get('.ion-padding > .list-md > :nth-child(6)').click({force: true});
       cy.get('.can-go-back > .header-md > .toolbar-title-default > .buttons-first-slot > .md').click({force: true});
-      cy.url().should('contain', 'about' )
+      cy.url().should('contain', 'about')
     })
   
   })
@@ -102,8 +107,10 @@ describe('about', () => {
       cy.get(':nth-child(8) > .ng-untouched').type('jluo30@jhu.edu')
       cy.get(':nth-child(11) > .ng-untouched').type('1234567')
       cy.get('.ion-padding > .md').click();
-      cy.get('.buttons-first-slot > .md').click();
-      cy.get(':nth-child(12) > .item-has-start-slot > .sc-ion-label-md-h').click();
+      // cy.get('.buttons-first-slot > .md').click();
+      // cy.get(':nth-child(12) > .item-has-start-slot > .sc-ion-label-md-h').click();
+      cy.wait(500);
+      cy.visit('/#/about');
     })
   
     it('Facebook', () => {

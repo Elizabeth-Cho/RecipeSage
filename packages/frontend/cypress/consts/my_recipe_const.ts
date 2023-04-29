@@ -1,8 +1,10 @@
 export const SAVE = '#main-content > page-edit-recipe > ion-content > div > div.ion-padding > ion-button';
+export const GARLIC_BREAD_SINGLE_CARD = '#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div';
 
 // labels
 export const ADD_LABEL = 'button > div.item-inner > div.input-wrapper';
-export const CREATE_SELECT_LABEL = '#main-content > page-recipe > ion-content > ion-card > div.dropdownSelect.ion-margin-start.ion-margin-end';
+export const CREATE_SELECT_LABEL = '#main-content > page-recipe > ion-content > ion-card > div.dropdownSelect.ion-margin-start.ion-margin-end > input';
+export const CREATE_DINNER = '#main-content > page-recipe > ion-content > ion-card > div.dropdownSelect.ion-margin-start.ion-margin-end > div.autocomplete > button > ion-item';
 export const DINNER_DROPDOWN = '#main-content > page-recipe > ion-content > ion-card > div.dropdownSelect.ion-margin-start.ion-margin-end > div.autocomplete > button:nth-child(2)';
 export const DINNER_LABEL = '#main-content > page-recipe > ion-content > ion-card > div.dropdownSelect.ion-margin-start.ion-margin-end > div.labels > span';
 // export const CARD_DINNER_LABEL = '#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div:nth-child(2) > div:nth-child(2) > div > div > div:nth-child(11) > div > p';
@@ -13,7 +15,7 @@ export const NOTES_EDIT = '#main-content > page-edit-recipe > ion-content > div 
 // export const NOTES_INPUT = '#main-content > page-edit-recipe > ion-content > div > ion-item:nth-child(9) > ion-textarea > div > textarea';
 export const INSTRUCTIONS_EDIT = '#main-content > page-edit-recipe > ion-content > div > ion-item:nth-child(7) > ion-textarea > div > textarea';
 export const INGREDIENTS_EDIT = '#main-content > page-edit-recipe > ion-content > div > ion-item:nth-child(6) > ion-textarea > div > textarea';
-export const SCALE_BUTTON = '#main-content > page-recipe > ion-content > ion-card > div.ingredientsInstructionsGrid > div.ingredientsCol > ion-item.ingredients.ion-text-wrap.item.md.item-lines-none.item-fill-none.hydrated.item-label > ion-label > p:nth-child(6) > a';
+export const SCALE_BUTTON = '#main-content > page-recipe > ion-content > ion-card > div.ingredientsInstructionsGrid > div.ingredientsCol > ion-item:nth-child(2) > ion-label > p > a';
 export const DOUBLE_SCALE = 'ion-popover > scale-recipe > ion-content > ion-item.preselect-options.item.md.item-lines-none.item-fill-none.ion-focusable.hydrated.item-multiple-inputs > ion-button:nth-child(3)';
 export const SINGLE_SCALE = 'ion-popover > scale-recipe > ion-content > ion-item.preselect-options.item.md.item-lines-none.item-fill-none.ion-focusable.hydrated.item-multiple-inputs > ion-button:nth-child(2)';
 export const SCALE_APPLY = 'ion-popover > scale-recipe > ion-footer > ion-button:nth-child(2)';
@@ -33,6 +35,9 @@ export const ATSL_DOUBLE_SCALE = 'ion-popover > scale-recipe > ion-content > ion
 export const ATSL_SCALE_APPLY = 'ion-popover > scale-recipe > ion-footer > ion-button:nth-child(2)';
 // export const ATSL_BREAD_CHECK = 'ion-modal > page-shopping-list > ion-content > ion-list:nth-child(4) > ion-item > ion-icon';
 export const ADD_TO_SHOPPING_LIST_SUBMIT = 'ion-modal > page-add-recipe-to-shopping-list-modal > ion-footer > ion-button'
+export const ATSL_NEW_SHOPPING_LIST = 'ion-modal > page-add-recipe-to-shopping-list-modal > ion-content > div:nth-child(2) > p > ion-button';
+export const ATSL_NEW_SHOPPING_LIST_TITLE = 'ion-modal > page-new-shopping-list-modal > ion-content > ion-item > ion-input > input';
+export const ATSL_CREATE_LIST = 'ion-modal > page-new-shopping-list-modal > ion-footer > ion-button';
 
 // buttons at bottom of recipe card
 export const EDIT = '#main-content > page-recipe > ion-content > ion-card > ion-row > ion-col:nth-child(1) > ion-button';
@@ -62,8 +67,9 @@ export const ATMP_OK = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.sc-ion
 export const ATMP_SELECT_MEAL = 'ion-modal > page-add-recipe-to-meal-plan-modal > ion-footer > div > select-meal > div > ion-item';
 export const ATMP_SELECT_MEAL_CANCEL = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.sc-ion-alert-md > div.alert-button-group.sc-ion-alert-md > button.alert-button.ion-focusable.ion-activatable.alert-button-role-cancel.sc-ion-alert-md';
 export const ATMP_SELECT_MEAL_OK = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.sc-ion-alert-md > div.alert-button-group.sc-ion-alert-md > button:nth-child(2)';
-export const ATMP_DINNER = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.sc-ion-alert-md > div.alert-radio-group.sc-ion-alert-md > #alert-input-2-2 > div';
+export const ATMP_DINNER = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.sc-ion-alert-md > div.alert-radio-group.sc-ion-alert-md > button:nth-child(3)';
 export const ATMP_TEST_MEAL_PLAN = '#main-content > page-meal-plans > ion-content > ion-list > ion-item';
+export const FIRST_MEAL_PLAN_IN_LIST = '#main-content > page-meal-plans > ion-content > ion-list > ion-item';
 
 // shopping list page
 export const SHOPPING_LIST_BADGE = '#main-content > page-shopping-lists > ion-content > ion-list > ion-item > ion-badge';
@@ -79,9 +85,9 @@ export const REMOVE_GARLIC_BREAD = '#main-content > page-shopping-list > ion-con
 export const SHARE_RECIPESAGE = 'ion-modal > page-share-modal > ion-content > ion-list > div.share-method-container > ion-segment > ion-segment-button:nth-child(1)';
 export const SHARE_LINK = 'ion-modal > page-share-modal > ion-content > ion-list > div.share-method-container > ion-segment > ion-segment-button:nth-child(2)';
 export const SHARE_EMBED = 'ion-modal > page-share-modal > ion-content > ion-list > div.share-method-container > ion-segment > ion-segment-button:nth-child(3)';
-export const SHARE_EMAIL_INPUT = 'ion-modal > page-share-modal > ion-content > ion-list > div:nth-child(3) > div > div > ion-item > ion-input > input';
+export const SHARE_EMAIL_INPUT = 'ion-modal > page-share-modal > ion-content > ion-list > div:nth-child(3) > div > select-user-knownuser > div > select-user > div > div > ion-searchbar > div > input';
 export const SHARE_EMAIL_SUBMIT = 'ion-modal > page-share-modal > ion-footer > ion-button';
-export const SHARE_EMAIL_STATUS = 'ion-modal > page-share-modal > ion-content > ion-list > div:nth-child(3) > div > div > p';
+export const SHARE_EMAIL_STATUS = 'ion-modal > page-share-modal > ion-content > ion-list > div:nth-child(3) > div > select-user-knownuser > div > select-user > div > div > div > button > ion-item';
 export const SHARE_CLOSE = 'ion-modal > page-share-modal > ion-header > ion-toolbar > ion-buttons > ion-button';
 
 // print
@@ -101,3 +107,13 @@ export const COOKIES_PIN = 'body > app-root > ion-app > ion-split-pane > cooking
 export const CLOSE_PIN_TOOLBAR = 'body > app-root > ion-app > ion-split-pane > cooking-toolbar > div > ion-icon.close.md.icon-large.hydrated';
 export const PIN_CONFIRM = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.sc-ion-alert-md > div.alert-button-group.sc-ion-alert-md > button';
 export const CLEAR_PIN_TOOLBAR_CONRFIRM = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.sc-ion-alert-md > div.alert-button-group.sc-ion-alert-md > button:nth-child(2)';
+
+// remaining garlic bread copy
+export const EXTRA_BREAD = '#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2) > img';
+
+// // remaining copy of copy
+// export const DOUBLE_COPY_BREAD_1 = '#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)';
+export const DOUBLE_COPY_BREAD_2 = '#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(3)';
+
+export const FIRST_RECIPE = '#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(1)';
+export const SECOND_RECIPE = '#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div:nth-child(2)';

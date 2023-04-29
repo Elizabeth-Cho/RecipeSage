@@ -9,8 +9,10 @@ describe('meal plans - create a meal plan', () => {
         cy.get(':nth-child(8) > .ng-untouched').type('echo30.dev@gmail.com')
         cy.get(':nth-child(11) > .ng-untouched').type('password')
         cy.get('.ion-padding > .md').click();
-        cy.get(sidebar.OPEN_SIDEBAR).click();
-        cy.get(sidebar.MEAL_PLANS).click();
+        // cy.get(sidebar.OPEN_SIDEBAR).click();
+        // cy.get(sidebar.MEAL_PLANS).click();
+        cy.wait(1000);
+        cy.visit('/#/meal-planners');
     })
 
     // should be able to create a meal plan from the meal plan page
@@ -41,8 +43,10 @@ describe('meal plans - edit an item', () => {
         cy.get(':nth-child(8) > .ng-untouched').type('echo30.dev@gmail.com')
         cy.get(':nth-child(11) > .ng-untouched').type('password')
         cy.get('.ion-padding > .md').click();
-        cy.get(sidebar.OPEN_SIDEBAR).click();
-        cy.get(sidebar.MEAL_PLANS).click();
+        cy.wait(1000);
+        cy.visit('/#/meal-planners');
+        // cy.get(sidebar.OPEN_SIDEBAR).click();
+        // cy.get(sidebar.MEAL_PLANS).click();
         // make a test plan
         cy.get(meal_plan.NEW_MEAL_PLAN).click();
         cy.get(meal_plan.NEW_MEAL_PLAN_TITLE_INPUT).type('test plan');

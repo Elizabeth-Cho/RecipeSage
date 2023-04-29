@@ -29,6 +29,7 @@ export const IMG_URL_INPUT = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.
 export const IMG_URL_CONFIRM = 'ion-alert > div.alert-wrapper.ion-overlay-wrapper.sc-ion-alert-md > div.alert-button-group.sc-ion-alert-md > button:nth-child(2)';
 
 // recipe card
+export const SINGLE_RECIPE_CARD = '#main-content > page-home > ion-content > div > div.infinite-scrolling-container > div > div:nth-child(2) > div > div > div';
 export const TITLE = '#main-content > page-recipe > ion-header > ion-toolbar > ion-title';
 export const DESCRIPTION = '#main-content > page-recipe > ion-content > ion-card > ion-item:nth-child(1) > ion-label > p';
 export const YIELD = '#main-content > page-recipe > ion-content > ion-card > ion-item:nth-child(1) > ion-label > ion-grid > ion-row > ion-col:nth-child(5) > p';
@@ -36,6 +37,8 @@ export const ACTIVE_TIME = '#main-content > page-recipe > ion-content > ion-card
 export const TOTAL_TIME = '#main-content > page-recipe > ion-content > ion-card > ion-item:nth-child(1) > ion-label > ion-grid > ion-row > ion-col:nth-child(4) > p';
 export const SOURCE = '#main-content > page-recipe > ion-content > ion-card > ion-item:nth-child(1) > ion-label > ion-grid > ion-row > ion-col:nth-child(2) > p';
 export const SOURCE_URL = '#main-content > page-recipe > ion-content > ion-card > ion-item:nth-child(1) > ion-label > ion-grid > ion-row > ion-col:nth-child(2) > p > a';
+export const NONRECIPE_SOURCE = '#main-content > page-recipe > ion-content > ion-card > ion-item:nth-child(1) > ion-label > ion-grid > ion-row > ion-col > p';
+export const NONRECIPE_SOURCE_URL = '#main-content > page-recipe > ion-content > ion-card > ion-item:nth-child(1) > ion-label > ion-grid > ion-row > ion-col > p > a';
 export const INGREDIENTS = '#main-content > page-recipe > ion-content > ion-card > div.ingredientsInstructionsGrid > div.ingredientsCol > ion-item.ingredients.ion-text-wrap.item.md.item-lines-none.item-fill-none.hydrated.item-label > ion-label';
 export const INSTRUCTIONS = '#main-content > page-recipe > ion-content > ion-card > div.ingredientsInstructionsGrid > div.instructionsCol > ion-item.instructions.ion-text-wrap.item.md.item-lines-none.item-fill-none.hydrated.item-label > ion-label';
 export const NOTES = '#main-content > page-recipe > ion-content > ion-card > div.notes.ion-margin-top > ion-item.ion-text-wrap.item.md.item-lines-none.item-fill-none.hydrated.item-label > ion-label > p';
